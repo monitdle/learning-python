@@ -229,4 +229,18 @@ key_list.sort()
 ```
 
 
+Exercise 12
+– a
+```
+popped_item = lst.pop()
+```
+– b
+```
+item = lst.pop(lst.index('broccoli'))
+```
+– c
+```
+italy_gdp = GDP_2018.pop('Italy')
+```
+
 
