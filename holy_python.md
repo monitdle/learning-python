@@ -1,6 +1,5 @@
 # Homework 06.11.2023
 ## Exercise 1
-
 – a
 ```
 print("Hello World!")
@@ -13,6 +12,7 @@ my_text = "Hello World!"
 ```
 print("%", "gREAT", "C-14", "13", "numbers", "7", ":)")
 ```
+
   
 ## Exercise 2
 – a
@@ -24,6 +24,7 @@ glass_of_water = 3
 print(glass_of_water)
 ```
 
+  
 ## Exercise 3
 – a
 ```
@@ -42,6 +43,7 @@ global_mean_sea_level_2018 = 21.36
 staying_alive = True
 ```
 
+  
 ## Exercise 4
 – a
 ```
@@ -72,6 +74,7 @@ answer_5 = type(int(my_temp))
 gwp_str = str(gross_world_product)
 ```
 
+  
 ## Exercise 6
 – a
 ```
@@ -130,6 +133,7 @@ answer_1 = min(lst)
 answer_1 = max(lst)
 ```
 
+  
 ## Exercise 9
 – a
 ```
@@ -189,6 +193,40 @@ ans_2 = type(v_2)
 – n
 ```
 ans_1 = len(str)
-'''
+```
+
+  
+## Exercise 11
+– a
+```
+lst.sort()
+```
+– b
+```
+lst.sort()
+```
+– c
+```
+lst.sort(reverse = True)
+```
+– d
+```
+gift_list.sort(reverse = True)
+```
+– e
+```
+NFL.sort(reverse = True)
+answer_1 = NFL[-1]
+```
+– f
+```
+muni.sort(reverse = True)
+```
+– g
+```
+key_list = list(dict.keys())
+key_list.sort()
+```
+
 
 
