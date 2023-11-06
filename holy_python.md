@@ -130,6 +130,65 @@ answer_1 = min(lst)
 answer_1 = max(lst)
 ```
 
-
+## Exercise 9
+– a
+```
+str = "It's always darkest before dawn."
+```
+– b
+```
+ans_1 = str[0] + str[1] + str[-1]
+```
+– c
+```
+str.replace('.','!')
+```
+– d
+```
+str.lower()
+```
+– e
+```
+str.upper()
+```
+– f
+```
+str.capitalize()
+```
+– g
+```
+ans_1 = str.startswith('A')
+```
+– h
+```
+ans_1 = str.endswith('.')
+```
+– i
+```
+ans_1 = str.index('v')
+```
+– j
+```
+ans_1 = str.find('m')
+```
+– k
+```
+str.find('X')
+str.index('X')
+```
+– l
+```
+ans_1 = str.count('a')
+ans_2 = str.count('o')
+```
+– m
+```
+ans_1 = type(v_1)
+ans_2 = type(v_2)
+```
+– n
+```
+ans_1 = len(str)
+'''
 
 
