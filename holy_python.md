@@ -26,3 +26,23 @@ print("I drank", glass_of_water, "glasses of water today.")
 print(glass_of_water)
 ```
 
+## Exercise 3
+– a
+```
+men_stepped_on_the_moon=12
+print(men_stepped_on_the_moon)
+```
+– b
+```
+my_reason_for_coding="fun"
+print(my_reason_for_coding)
+```
+– c
+```
+global_mean_sea_level_2018=21.36
+```
+– d
+```
+staying_alive=True
+```
+
