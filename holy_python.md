@@ -1,18 +1,18 @@
 # Homework 06.11.2023
 ## Exercise 1
 
-- a
+_ a
 ```
 print("Hello World!"
 ```
   
-- b
+_ b
 ```
 my_text = "Hello World!"
 print(my_text)
 ```
   
-- c
+_ c
 ```
 print("%", "gREAT", "C-14", "13", "numbers", "7", ":)")
 ```
