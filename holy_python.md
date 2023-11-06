@@ -69,6 +69,67 @@ answer_5 = type(int(my_temp))
 ```
 – h
 ```
-gwp_str=str(gross_world_product)
+gwp_str = str(gross_world_product)
 ```
+
+## Exercise 6
+– a
+```
+answer_1 = lst[0]
+```
+– b
+```
+print(lst[1])
+```
+– c
+```
+answer_1 = lst[-1]
+```
+– d
+```
+gift_list.append('pajamas')
+```
+– e
+```
+gift_list + ["socks", "tshirt", "pajamas"]
+```
+– f
+```
+gift_list.insert(3, 'slippers')
+```
+– g
+```
+answer_1 = lst.index(8679)
+```
+– h
+```
+lst.append(["Navigator", "Suburban"])
+```
+– i
+```
+lst.remove(lst[-1])
+```
+– j
+```
+lst.reverse()
+```
+– k
+```
+answer_1 = lst.count(6)
+```
+– l
+```
+answer_1 = sum(lst)
+```
+– m
+```
+answer_1 = min(lst)
+```
+– n
+```
+answer_1 = max(lst)
+```
+
+
+
 
