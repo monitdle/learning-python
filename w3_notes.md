@@ -62,7 +62,7 @@ if x > 10:
     print("but not above 20.”)
 ```
   
-[pass]
+_pass_
 ```
 	a = 33
 	b = 200
@@ -75,7 +75,7 @@ if statements cannot be empty but if you for some reason have an if statement
   
 ## for-Loops
   
-[continue]
+_continue_
 ```
 	fruits = ["apple", "banana", "cherry"]
 	for x in fruits:
@@ -85,7 +85,7 @@ if statements cannot be empty but if you for some reason have an if statement
 In the loop, when the item value is "banana", jump directly to the next item
   
   
-[break]
+_break_
 stops the loop before it has looped through all the items
 
 ```
@@ -109,7 +109,7 @@ stops the loop before it has looped through all the items
 ```
 
 
-[continue]
+_continue_
 stops current iteration of the loop and continues with the next
 
 ```
@@ -122,24 +122,24 @@ stops current iteration of the loop and continues with the next
 	# does not print “banana”
 ```
 
-[range(x)]
-	- returns sequence of numbers until x (stop excluded as always)
-	- start: 0
-	- steps: 1
-	- stop = x → excluded
+_range(x)_
+- returns sequence of numbers until x (stop excluded as always)
+- start: 0
+- steps: 1
+- stop = x → excluded
   
-[range(y, x)]
-	- y = start
-	- x = stop → excluded
+_range(y, x)_
+- y = start
+- x = stop → excluded
 
-[range(y, x, z)]
-	- z as step (like slicing)
+_range(y, x, z)_
+- z as step (like slicing)
   
   
 in for-Loops:
-[else]
-	- defines what happens when loop ends
-	- will NOT be executed if the loop is stopped by a break statement 		→ break stronger than else
+_else_
+- defines what happens when loop ends
+- will NOT be executed if the loop is stopped by a break statement 		→ break stronger than else
   
   
 ### Nested for – loops in loops:
@@ -164,5 +164,5 @@ The "inner loop" will be executed one time for each iteration of the "outer loop
       			tasty cherry
 ```
 
-[pass]
+_pass_
 same as in for, just to avoid error
