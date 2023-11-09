@@ -1,4 +1,5 @@
 # Notes of w3-exercises
+
   
 ## Some functions
 ```
@@ -7,13 +8,14 @@
 	sed do eiusmod tempor incididunt
 	ut labore et dolore magna aliqua.”""
 ```
--> multiple lines of strings with """ or '''
+- multiple lines of strings with """ or '''
+
   
-```
-len()
-```
--> prints length of a string
+_len()_  
+- prints length of a string
   
+
+_in and not in_  
 ```
 	txt = "The best things in life are free”
 	print("free" in txt)
@@ -22,12 +24,13 @@ len()
 
 	# Output: True or False
 ```
+
   
-```
-.strip()
-```
--> removes leading and trailing whitespace
+_.strip()_  
+- removes leading and trailing whitespace
   
+  
+_.format()_  
 ```
 	age = 36
 	txt = "My name is John, and I am {}”
@@ -35,19 +38,17 @@ len()
 ```
 - {}           holds space for variable
 - .format()    returns formatted version, using substitutions marked with ‘{}’
-  
-```
-bool()
 
-# Output: True, unless the object is **empty**, **None**, or numerically equal to **zero**
-```
+  
+_bool()_  
+Output: True, unless the object is **empty**, **None**, or numerically equal to **zero**
+  
   
   
 ## if-Loops
 - if: beginning of loop
 - elif: other condition(s)
 - else: everything else
-
 - if not
 - or
 - and
@@ -64,6 +65,7 @@ bool()
 	    print("but not above 20.”)
 ```
   
+  
 _pass_  
 ```
 	a = 33
@@ -73,6 +75,7 @@ _pass_
 ```
 if statements cannot be empty but if you for some reason have an if statement with no content  
 -> pass to avoid getting error
+  
   
   
 ## for-Loops
@@ -89,7 +92,6 @@ In the loop, when the item value is "banana", jump directly to the next item
   
 _break_  
 stops the loop before it has looped through all the items
-
 ```
 	fruits = ["apple", "banana", "cherry"]
 	for x in fruits:
@@ -109,11 +111,10 @@ stops the loop before it has looped through all the items
 	# Output:	apple
 			banana
 ```
-
-
+  
+  
 _continue_  
 stops current iteration of the loop and continues with the next
-
 ```
 	fruits = ["apple", "banana", "cherry"]
 	for x in fruits:
@@ -124,6 +125,7 @@ stops current iteration of the loop and continues with the next
 	# does not print “banana”
 ```
 
+  
 _range(x)_  
 - returns sequence of numbers until x (stop excluded as always)
 - start: 0
@@ -133,18 +135,17 @@ _range(x)_
 _range(y, x)_
 - y = start
 - x = stop → excluded
-
+  
 _range(y, x, z)_  
 - z as step (like slicing)
   
   
-in for-Loops:  
 _else_
 - defines what happens when loop ends
 - will NOT be executed if the loop is stopped by a break statement → break stronger than else
   
   
-### Nested for – loops in loops:
+### Nested For – loops in loops:
 The "inner loop" will be executed one time for each iteration of the "outer loop”
 
 ```
@@ -165,6 +166,6 @@ The "inner loop" will be executed one time for each iteration of the "outer loop
       			tasty banana
       			tasty cherry
 ```
-
-_pass_
+  
+_pass_  
 same as in for, just to avoid error
