@@ -64,7 +64,7 @@ bool()
 	    print("but not above 20.”)
 ```
   
-_pass_
+_pass_  
 ```
 	a = 33
 	b = 200
@@ -77,7 +77,7 @@ if statements cannot be empty but if you for some reason have an if statement
   
 ## for-Loops
   
-_continue_
+_continue_  
 ```
 	fruits = ["apple", "banana", "cherry"]
 	for x in fruits:
@@ -87,7 +87,7 @@ _continue_
 In the loop, when the item value is "banana", jump directly to the next item
   
   
-_break_
+_break_  
 stops the loop before it has looped through all the items
 
 ```
@@ -111,7 +111,7 @@ stops the loop before it has looped through all the items
 ```
 
 
-_continue_
+_continue_  
 stops current iteration of the loop and continues with the next
 
 ```
@@ -124,7 +124,7 @@ stops current iteration of the loop and continues with the next
 	# does not print “banana”
 ```
 
-_range(x)_
+_range(x)_  
 - returns sequence of numbers until x (stop excluded as always)
 - start: 0
 - steps: 1
@@ -134,11 +134,11 @@ _range(y, x)_
 - y = start
 - x = stop → excluded
 
-_range(y, x, z)_
+_range(y, x, z)_  
 - z as step (like slicing)
   
   
-in for-Loops:
+in for-Loops:  
 _else_
 - defines what happens when loop ends
 - will NOT be executed if the loop is stopped by a break statement → break stronger than else
