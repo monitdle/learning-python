@@ -2,10 +2,10 @@
   
 ## Some functions
 ```
-a = """Lorem ipsum dolor sit amet,
-consectetur adipiscing elit,
-sed do eiusmod tempor incididunt
-ut labore et dolore magna aliqua.”""
+	a = """Lorem ipsum dolor sit amet,
+	consectetur adipiscing elit,
+	sed do eiusmod tempor incididunt
+	ut labore et dolore magna aliqua.”""
 ```
 -> multiple lines of strings with """ or '''
   
@@ -15,12 +15,13 @@ len()
 -> prints length of a string
   
 ```
-txt = "The best things in life are free”
+	txt = "The best things in life are free”
 	print("free" in txt)
 	or
 	print("free" not in txt)
+
+	# Output: True or False
 ```
--> Output: True or False
   
 ```
 .strip()
@@ -28,15 +29,16 @@ txt = "The best things in life are free”
 -> removes leading and trailing whitespace
   
 ```
-age = 36
-txt = "My name is John, and I am {}”
-print(txt.format(age))
+	age = 36
+	txt = "My name is John, and I am {}”
+	print(txt.format(age))
 ```
 - {}           holds space for variable
 - .format()    returns formatted version, using substitutions marked with ‘{}’
   
 ```
 bool()
+
 # Output: True, unless the object is **empty**, **None**, or numerically equal to **zero**
 ```
   
@@ -53,13 +55,13 @@ bool()
   
 ### Nested If – loops in loops
 ```
-x = 41
-if x > 10:
-  print("Above ten,")
-  if x > 20:
-    print("and also above 20!")
-  else:
-    print("but not above 20.”)
+	x = 41
+	if x > 10:
+	  print("Above ten,")
+	  if x > 20:
+	    print("and also above 20!")
+	  else:
+	    print("but not above 20.”)
 ```
   
 _pass_
@@ -94,7 +96,7 @@ stops the loop before it has looped through all the items
 	  print(x)
 	  if x == "banana":
 	    break
-  # Output: 	apple
+	# Output: 	apple
 ```
 
 ```
@@ -105,7 +107,7 @@ stops the loop before it has looped through all the items
 	    break
 
 	# Output:	apple
-			      banana
+			banana
 ```
 
 
@@ -139,7 +141,7 @@ _range(y, x, z)_
 in for-Loops:
 _else_
 - defines what happens when loop ends
-- will NOT be executed if the loop is stopped by a break statement 		→ break stronger than else
+- will NOT be executed if the loop is stopped by a break statement → break stronger than else
   
   
 ### Nested for – loops in loops:
