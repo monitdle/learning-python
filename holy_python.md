@@ -153,8 +153,8 @@ for x in lst:
 for i in lst:
     print("Hello!, " + i)
 ```
-- using comma automatically inserts a space between words
-- plus needs you to add it yourself
+- using _comma_ automatically inserts a space between words
+- _plus_ needs you to add it yourself
 
 – c
 ```
