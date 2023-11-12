@@ -132,7 +132,113 @@ answer_1 = min(lst)
 ```
 answer_1 = max(lst)
 ```
+  
+  
+## Exercise 8
+– a
+```
+lst=["Sam", "Lisa", "Micha", "Dave", "Wyatt", "Emma", "Sage"]
 
+for x in lst:
+    print(x)
+```
+– b
+```
+str="Antarctica"
+
+for x in lst:
+    print("Hello!,", x)
+
+# their solution
+for i in lst:
+    print("Hello!, " + i)
+```
+- using comma automatically inserts a space between words
+- plus needs you to add it yourself
+
+– c
+```
+str="Civilization"
+
+for x in str:
+    print(x)
+```
+
+– d
+```
+# guess: 12
+for i in str:
+    c = c + 1
+
+    print(c)
+```
+– e
+```
+lst1=["Phil", "Oz", "Seuss", "Dre"]
+lst2=[]
+
+for x in lst1:
+    lst2.append("Dr. " + x)
+print(lst2)
+
+# Output: ['Dr. Phil', 'Dr. Oz', 'Dr. Seuss', 'Dr. Dre']
+```
+– f
+```
+lst1=[3, 7, 6, 8, 9, 11, 15, 25]
+lst2=[]
+
+for x in lst1:
+    lst2.append(x**2)
+print(lst2)
+
+# Output: [9, 49, 36, 64, 81, 121, 225, 625]
+```
+– g
+```
+lst1=[111, 32, -9, -45, -17, 9, 85, -10]
+lst2=[]
+
+for x in lst1:
+    if x > 0:
+        lst2.append(x)
+print(lst2)
+
+# Output: [111, 32, 9, 85]
+```
+– h
+```
+dict={"z1":900, "t1": 1100, "p1": 2300, "r1": 1050, "k1": 3200, "g1": 400}
+lst=[]
+
+for x in dict:
+    if dict[x] > 1000:
+        y = dict[x] - 1000
+        lst.append(y)
+print(lst)
+
+# their solution:
+for i in dict:
+    if dict[i] > 1000:
+        lst.append(dict[i]-1000)
+```
+- I don't know why I made it more complicated
+- probably to comprehend the structure of dictionaries better
+- Note: Have to think about why _for_ doesn't need 'dict[x]' but _if_ does
+  
+– i
+```
+lst1=[3.14, 66, "Teddy Bear", True, [], {}]
+lst2=[]
+
+for x in lst1:
+    lst2.append(type(x))
+
+print(lst2)
+
+# Output: [<type 'float'>, <type 'int'>, <type 'str'>, <type 'bool'>, <type 'list'>, <type 'dict'>]
+```
+  
   
 ## Exercise 9
 – a
