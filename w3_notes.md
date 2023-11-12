@@ -40,9 +40,7 @@ _.format()_
 - .format()    returns formatted version, using substitutions marked with ‘{}’
 
   
-_bool()_  
-Output: True, unless the object is **empty**, **None**, or numerically equal to **zero**
-  
+
   
   
 ## if-Loops
@@ -169,3 +167,11 @@ The "inner loop" will be executed one time for each iteration of the "outer loop
   
 _pass_  
 same as in for, just to avoid error
+
+
+
+## Boolean value Exercises
+_bool()_  
+Output: True, unless the object is **empty**, **None**, or numerically equal to **zero**
+
+
