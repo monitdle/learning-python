@@ -9,7 +9,7 @@ shopping = ['bread', 'potatoes', 'eggs', 'flour', 'rubber duck', 'pizza', 'milk'
 for item in shopping2:
     shopping.append(item)
 print(shopping)
-```
+```      
   
   
 - Avoid double items.
@@ -18,7 +18,7 @@ for item in shopping2:
     if item not in shopping:
         shopping.append(item)
 print(shopping)
-```
+```      
   
   
 ## _Exercise 2.2_: elif and else
