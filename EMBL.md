@@ -18,9 +18,9 @@ for item in shopping2:
     if item not in shopping:
         shopping.append(item)
 print(shopping)
-```      
-  
-  
+```
+
+
 ## _Exercise 2.2_: elif and else
 - Printing what's already on the list.
   
