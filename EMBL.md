@@ -1,6 +1,6 @@
 # Introduction to Python Programming: 2. Beginning Programming
 ## _Exercise 2.1_: .append() and not in
-- Make second list and append to first one.
+- make second list and append to first one.
 ```
 shopping = ['bread', 'potatoes', 'eggs', 'flour', 'rubber duck', 'pizza', 'milk']
 shopping2 = ["cheese", "flour", "eggs", "spaghetti", "sausages", "bread"]
@@ -12,7 +12,7 @@ print(shopping)
 ```      
   
   
-- Avoid double items.
+- avoid double items.
 ```
 for item in shopping2:
     if item not in shopping:
@@ -22,7 +22,7 @@ print(shopping)
 
 
 ## _Exercise 2.2_: elif and else
-- Printing what's already on the list.
+- printing what's already on the list.
   
 1. Solution using **elif**
 ```
@@ -46,9 +46,48 @@ print(shopping)
   
   
 ## _Exercise 2.3_: range()
-- Desired output: [4, 11, 18, 25]
+- desired output: [4, 11, 18, 25]
 ```
 list(range(4, 26, 7))
+```
+  
+  
+## _Exercise 2.4_: amount of foods
+- did it on 13.11.
+- tried "perfecting" it by considering the grammar
+```
+shopping = ['bicycle pump', 'sofa', 'yellow paint']
+amounts = ['1', '7', '9']
+
+for x in range(len(shopping)):
+    if int(amounts[x]) > 1:
+        s = "I need " + amounts[x] + " " + shopping[x] + "s"
+        print(s)
+    else:
+        s = "I need " + amounts[x] + " " + shopping[x]
+        print(s)
+```
+- playing with loops by trying to put it in one sentence using what we have
+```
+shopping = ['bicycle pump', 'sofa', 'yellow paint']
+amounts = ['1', '7', '9']
+s = "I need "
+
+for x in range(len(shopping)):
+    if x == len(shopping) - 1:
+        if int(amounts[x]) > 1:
+            s += amounts[x] + " " + shopping[x] + "s."
+        else:
+            s += amounts[x] + " " + shopping[x] + "."
+    else:
+        if int(amounts[x]) > 1:
+            s += amounts[x] + " " + shopping[x] + "s, "
+        else:
+            s += amounts[x] + " " + shopping[x] + ", "
+print(s)
+
+# Output: I need 1 bicycle pump, 7 sofas, 9 yellow paints.
+# Wanted plural option and a dot at the end.
 ```
   
   
@@ -80,16 +119,15 @@ job = 'engineer'
 – looks the clearest  
   
   
-## _Exercise 2.4_: .format()
+## _Exercise 2.5_: .format()
 - Fill in the gaps
-- Did similar/simpler version in unit 13.11.
     
 shopping = ['bread', 'potatoes', 'eggs', 'flour', 'rubber duck', 'pizza', 'milk']
 amounts = ['1', '10', '12', '1', '2', '5', '1']
 --- i in range(len(---)):
     s = 'I need to buy --- ---'.format(amounts[---], ---[i])
     print(---)
-
+  
 ```
 for i in range(len(shopping)):
     s = "I need to buy {0} {1}".format(amounts[i], shopping[i])
