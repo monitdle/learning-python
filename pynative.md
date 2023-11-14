@@ -1,6 +1,7 @@
 # Notes to Exercises  
 
 ## First time using **while**  
+_Printing till 5_
 ```
 i = 1
 while i <= 5:
@@ -13,8 +14,22 @@ while i <= 5:
           4
           5
 ```
+  
+_Counting digits of num_
+```
+num = 34566
+count = 0
 
-## Pattern: Pyramid
+while num != 0:
+    num = num // 10
+    count = count + 1
+print(count)
+```
+
+
+
+## Patterns with **for**
+### Pyramid
 ```
 for i in range(1, 6):
     for x in range(1, i + 1):
@@ -29,10 +44,27 @@ for i in range(1, 6):
 ```
 - inner loop makes columns
 - outer loop makes rows
-- used under score for better visualisation
+- used under score for better visualisation  
+
   
-  
-## Sum of all numbers with text
+### Reverse Pyramid
+```
+rows = 5
+# reverse loop
+for i in range(rows, 0, -1):
+    for j in range(i, 0, -1):
+        print(j, end=' ')
+    print("")
+
+# Output:
+5 4 3 2 1 
+4 3 2 1 
+3 2 1 
+2 1 
+1 
+```
+
+### Sum of all numbers with text 
 ```
 y = 0
 for x in range(11):
@@ -44,9 +76,9 @@ print("Sum is:", y)
           Sum is: 55
 ```
 - remember Rosalind INI4
+
   
-  
-## Multiplication table for a number (num) till 10
+### Multiplication table for a number (num) till 10
 ```
 num = 2
 for x in range(1, 11):
@@ -55,8 +87,19 @@ for x in range(1, 11):
 ```
 - Zweierreihe
 
+### Printing list in reverse
+```
+list1 = [10, 20, 30, 40, 50]
 
-## Multiple if-Loops
+for x in range(len(list1) - 1, 0 - 1, -1):
+    print(list1[x])
+```
+
+
+
+
+## if-Loops
+### Multiple if-Loops
 _Conditions:_  
 - The number must be divisible by five
 - If the number is greater than 150, then skip it and move to the next number
