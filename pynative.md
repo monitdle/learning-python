@@ -56,4 +56,26 @@ for x in range(1, 11):
 - Zweierreihe
 
 
-## 
+## Multiple if-Loops
+_Conditions:_  
+- The number must be divisible by five
+- If the number is greater than 150, then skip it and move to the next number
+- If the number is greater than 500, then stop the loop
+```
+numbers = [12, 75, 150, 180, 145, 525, 50]
+
+for x in numbers:
+    if x > 500:
+        break
+    if x%5 != 0:    #elif
+        continue
+    if x > 150:    #elif
+        continue
+    else:
+        print(x)
+```
+
+
+
+
+
