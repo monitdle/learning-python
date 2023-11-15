@@ -64,6 +64,33 @@ for i in range(rows, 0, -1):
 1 
 ```
 
+### Combined pyramid
+```
+n = 5
+
+for i in range(1, n + 1):
+    for x in range(i, 0, -1):
+        print("*", end = " ")
+    print("")
+for i in range(n -1, 0, -1):
+    for x in range(i, 0, -1):
+        print("*", end = " ")
+    print("")
+
+# Output:
+* 
+* * 
+* * * 
+* * * * 
+* * * * * 
+* * * * 
+* * * 
+* * 
+* 
+```
+
+
+
 ### Sum of all numbers with text 
 ```
 y = 0
@@ -96,6 +123,35 @@ for x in range(len(list1) - 1, 0 - 1, -1):
 ```
 
 
+### Redefining variables within a loop
+#### Fibonacci sequence
+```
+a = 0
+b = 1
+num = 10
+print("Fibonacci sequence:")
+
+for x in range(num):
+    print(a, end = " ")
+    c = b + a
+    a = b
+    b = c
+
+# Output:
+Fibonacci sequence:
+0 1 1 2 3 5 8 13 21 34
+```
+
+#### Factorial
+```
+num = 4
+a = 1
+
+for x in range(1, num + 1):
+    c = a * x
+    a = c
+print(c)
+```  
 
 
 ## if-Loops
@@ -118,7 +174,106 @@ for x in numbers:
         print(x)
 ```
 
+### Prime numbers
+```
+start = 25
+end = 50
+
+for x in range(start, end + 1):
+    if x > 1:
+        for i in range(2,x):
+            if (x % i) == 0:
+                break
+        else:
+            print(x)
+```
 
 
 
+## Very different solutions
+Exercise 14: Reverse a given integer number  
+_I didn't think of using **while**_
+```
+# my idea:
+num = 76542
+
+for x in range(len(str(num)) - 1,-1,-1):
+    strnum = str(num)
+    index = strnum[x]
+    print(int(index), end = "")
+
+###################################################
+# using while:
+num = 76542
+reverse_number = 0
+print("Given Number ", num)
+
+while num > 0:
+    reminder = num % 10
+    reverse_number = (reverse_number * 10) + reminder
+    num = num // 10
+print("Revere Number ", reverse_number)
+```
+
+
+### Printing negative numbers
+```
+for x in range(10, 0, -1):
+    print("-" + str(x))
+
+# I cheated :D
+
+###################################################
+# Actual solution:
+for x in range(-10, 0, 1):
+    print(x)
+```
+
+
+### Printing odd indices
+```
+# My solution:
+my_list = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100]
+
+for x in range(len(my_list)):
+    if x % 2 == 0:
+        continue
+    else:
+        print(my_list[x], end = " ")
+
+###################################################
+# Actual and better solution:
+my_list = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100]
+
+for i in my_list[1::2]:
+    print(i, end=" ")
+```
+
+
+### Sum of the series upto n terms
+2+22+222+2222+22222
+```
+# My solution:
+n = 5
+a = 0
+
+for x in range(1, n + 1):
+    res = int("2" * x) + a
+    a = res
+print(res)
+
+###################################################
+# Actual solution:
+n = 5
+# first number of sequence
+start = 2
+sum_seq = 0
+
+# run loop n times
+for i in range(0, n):
+    print(start, end="+")
+    sum_seq += start
+    # calculate the next term
+    start = start * 10 + 2
+print("\nSum of above series is:", sum_seq)
 
