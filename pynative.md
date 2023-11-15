@@ -13,7 +13,8 @@ while i <= 5:
           3
           4
           5
-```
+```  
+  
   
 _Counting digits of num_
 ```
@@ -29,7 +30,7 @@ print(count)
 
 
 ## Patterns with **for**
-### Pyramid
+_Pyramid_
 ```
 for i in range(1, 6):
     for x in range(1, i + 1):
@@ -45,9 +46,9 @@ for i in range(1, 6):
 - inner loop makes columns
 - outer loop makes rows
 - used under score for better visualisation  
-
   
-### Reverse Pyramid
+  
+_Reverse Pyramid_
 ```
 rows = 5
 # reverse loop
@@ -62,9 +63,10 @@ for i in range(rows, 0, -1):
 3 2 1 
 2 1 
 1 
-```
-
-### Combined pyramid
+```  
+  
+  
+_Combined pyramid_
 ```
 n = 5
 
@@ -87,11 +89,10 @@ for i in range(n -1, 0, -1):
 * * * 
 * * 
 * 
-```
-
-
-
-### Sum of all numbers with text 
+```  
+  
+  
+_Sum of all numbers with text_
 ```
 y = 0
 for x in range(11):
@@ -102,29 +103,30 @@ print("Sum is:", y)
 # Output: Enter number 10
           Sum is: 55
 ```
-- remember Rosalind INI4
-
+- remember Rosalind INI4  
   
-### Multiplication table for a number (num) till 10
+  
+_Multiplication table for a number (num) till 10_
 ```
 num = 2
 for x in range(1, 11):
     y = num * x
     print(y)
 ```
-- Zweierreihe
-
-### Printing list in reverse
+- Zweierreihe  
+  
+  
+_Printing list in reverse_
 ```
 list1 = [10, 20, 30, 40, 50]
 
 for x in range(len(list1) - 1, 0 - 1, -1):
     print(list1[x])
-```
-
-
+```  
+  
+  
 ### Redefining variables within a loop
-#### Fibonacci sequence
+_Fibonacci sequence_
 ```
 a = 0
 b = 1
@@ -141,8 +143,9 @@ for x in range(num):
 Fibonacci sequence:
 0 1 1 2 3 5 8 13 21 34
 ```
-
-#### Factorial
+  
+  
+_Factorial_
 ```
 num = 4
 a = 1
@@ -152,11 +155,11 @@ for x in range(1, num + 1):
     a = c
 print(c)
 ```  
-
-
+  
+  
 ## if-Loops
-### Multiple if-Loops
-_Conditions:_  
+_Multiple if-Loops_
+Conditions:  
 - The number must be divisible by five
 - If the number is greater than 150, then skip it and move to the next number
 - If the number is greater than 500, then stop the loop
@@ -173,8 +176,9 @@ for x in numbers:
     else:
         print(x)
 ```
-
-### Prime numbers
+  
+  
+_Prime numbers_
 ```
 start = 25
 end = 50
@@ -187,12 +191,12 @@ for x in range(start, end + 1):
         else:
             print(x)
 ```
-
-
-
+  
+  
+  
 ## Very different solutions
-Exercise 14: Reverse a given integer number  
-_I didn't think of using **while**_
+_Exercise 14: Reverse a given integer number_  
+I didn't think of using **while**
 ```
 # my idea:
 num = 76542
@@ -214,9 +218,9 @@ while num > 0:
     num = num // 10
 print("Revere Number ", reverse_number)
 ```
-
-
-### Printing negative numbers
+  
+  
+_Printing negative numbers_
 ```
 for x in range(10, 0, -1):
     print("-" + str(x))
@@ -228,9 +232,9 @@ for x in range(10, 0, -1):
 for x in range(-10, 0, 1):
     print(x)
 ```
-
-
-### Printing odd indices
+  
+  
+_Printing odd indices_
 ```
 # My solution:
 my_list = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100]
@@ -248,9 +252,9 @@ my_list = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100]
 for i in my_list[1::2]:
     print(i, end=" ")
 ```
-
-
-### Sum of the series upto n terms
+  
+  
+_Sum of the series upto n terms_
 2+22+222+2222+22222
 ```
 # My solution:
