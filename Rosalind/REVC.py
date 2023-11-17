@@ -41,7 +41,7 @@ for x in sequence[::-1]:    #getting rid of list creations & using splicing
     else:
         sequence_result.append("N")
 
-print("".join(sequence_result))     #turning result list into a string (had to google that one)
+print("".join(sequence_result))     #turning result list into a string with nothing as separator (had to google that)
 
 
 
