@@ -61,7 +61,7 @@ for key, value in dict.items():
 s = "We tried list and we tried dicts also we tried Zen"
 dict = {}
 for word in s.split(" "):
-    if word not in dict.keys():
+    if word not in dict:
         dict[word] = 1
     else:
         dict[word] += 1
