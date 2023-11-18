@@ -4,7 +4,6 @@
     # [1] kids (= number of last Gen, in pairs)
     # [2] new offspring pairs (= adults of 2 Gens before * k)
     # [3] adult pairs who are the parents of the new offpsrings
-    # number of Generations = n
 
 #   F1 = 1
 #   F2 = 1
