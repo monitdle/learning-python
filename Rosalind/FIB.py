@@ -1,10 +1,10 @@
 # Wabbits
 
-####Number of rabbits is:
-    #[1] kids (= number of last Gen, in pairs)
-    #[2] new offspring pairs (= adults of 2 Gens before * k)
-    #[3] adult pairs who are the parents of the new offpsrings
-    #number of Generations = n
+## Number of rabbits is:
+    # [1] kids (= number of last Gen, in pairs)
+    # [2] new offspring pairs (= adults of 2 Gens before * k)
+    # [3] adult pairs who are the parents of the new offpsrings
+    # number of Generations = n
 
 #   F1 = 1
 #   F2 = 1
@@ -12,8 +12,8 @@
 #   F4 = F3 + (F2*k)
 #   F5 = F4 + (F3*k)
 
-#n = 5 ... number of generations, Fn
-#k = 3 ... number of offspring pairs per pair
+# n = 5 ... number of generations, Fn
+# k = 3 ... number of offspring pairs per pair
 
 def wabbits(n, k):
     F1 = 1    #first generation with one pair, two young to have offspring
