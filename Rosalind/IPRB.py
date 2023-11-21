@@ -12,7 +12,7 @@ def dominant(k, m, n):
     m_branch = (m / pop) * (((3*(m-1)) / (4*(pop-1))) + (k / (pop - 1)) + (n / (2*(pop - 1))))
     n_branch = (n / pop) * ((k / (pop - 1)) + (m / (2*(pop - 1))))
     
-    #PA is the probabiblity for having the dominant allele A
+    #PA is the probability for having the dominant allele A
     PA = round(k_branch + m_branch + n_branch, 5)   #rounding an integer
     return PA
 
