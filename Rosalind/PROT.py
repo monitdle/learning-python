@@ -20,20 +20,23 @@ codontable = {"CUU":"L", "CUC":"L", "CUA":"L", "CUG":"L", "UUA":"L", "UUG":"L",
             "CAA":"Q", "CAG":"Q", 
             "UGG":"W", 
             "AUG":"M", 
-            "UAA":"Stop", "UAG":"Stop", "UGA":"Stop" 
-            }
+            "UAA":"Stop", "UAG":"Stop", "UGA":"Stop"}
 
 # Example:
 RNAstring = "AUGGCCAUGGCGCCCAGAACUGAGAUCAAUAGUACCCGUAUUAACGGGUGA"
+
+#it is very similar to SUBS solution
+#so we still look at it as using a scanner to scan a segment and moving the scanner base by base
 
 movement = 0
 for i in range(len(RNAstring)):
     start = 0 + movement
     segment = RNAstring[start : 3 + movement]
+ #now we look if the scanned segment is in the dict
     if segment in codontable:
-        if codontable[segment] == "Stop":
+        if codontable[segment] == "Stop": #if the value is Stop, the scanning will end
             break
         else:
-            print(codontable[segment], end = "")
-            movement += 2
-    movement += 1
+            print(codontable[segment], end = "")  #if the segment is in the dict, print it, separator is space
+            movement += 2   #if printed, the scanner has to move 3 steps, since 3 bases make 1 letter, so 2...
+    movement += 1           #...plus 1; if not printed the scanner will only be moved 1 base
