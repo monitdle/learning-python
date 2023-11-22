@@ -10,7 +10,7 @@ n = 2   #aa
 def dominant(k, m, n):
     pop = k + m + n     #population size
 
-    #branches: probability of e.g. k as one mate, times sum of probabilities of k/m/n as their mate 
+    #branches: probability of e.g. k as one mate, times sum of probabilities of k/m/n as their mate, incl. the prob of inheriting the allele
     k_branch = (k / pop) * (((k-1) / (pop-1)) + (m / (pop - 1)) + (n / (pop - 1)))
     m_branch = (m / pop) * (((3*(m-1)) / (4*(pop-1))) + (k / (pop - 1)) + (n / (2*(pop - 1))))
     n_branch = (n / pop) * ((k / (pop - 1)) + (m / (2*(pop - 1))))
