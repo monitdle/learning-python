@@ -14,7 +14,7 @@ AAATCCC
 >Rosalind_5013
 GGGTGGG"""
 
-### Step 1: Splitting & creating lists
+### Step 1: Splitting & creating list
 DataString = DataRaw.split("\n")    #split in lines
 
 
