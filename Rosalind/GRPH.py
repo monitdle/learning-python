@@ -16,8 +16,6 @@ GGGTGGG"""
 
 ### Step 1: Splitting & creating lists
 DataString = DataRaw.split("\n")    #split in lines
-DataString_remv = DataRaw.replace(">", "").split("\n")
-
 
 
 ### Step 2: Creating lists of DNA strings and IDs - ATTENTION: one string can take multiple lines
@@ -33,7 +31,6 @@ for item in DataString[1:]:
 DNAstrings.append(subseq)   #append last DNA string
 #print(DNAstrings)
 
-
 IDlist = []
 for ID in DataString_remv:
     if "Rosalind_" in ID:   #every line with "Rosalind_" gets recognized as an ID line
@@ -41,10 +38,8 @@ for ID in DataString_remv:
 #print(IDlist)
 
 
-
 ### Step 3: Create dictionary(?) with DNA strings as keys and ID as values
 DNA_ID = dict(zip(DNAstrings, IDlist))
-
 
 
 ### Step 4.1: Comparing first 3 aminoacids with last three aminoacids of another string
