@@ -25,7 +25,7 @@ a * c % n == b * d % n
 #Output: number of possible original RNA strings % 1,000,000
 #Tip: Don't forget Stop codon
 
-Protein = "MA"
+Protein_string = "MA"
 codontable = {"CUU":"L", "CUC":"L", "CUA":"L", "CUG":"L", "UUA":"L", "UUG":"L", 
             "CGU":"R", "CGC":"R", "CGA":"R", "CGG":"R", "AGA":"R", "AGG":"R", 
             "GCC":"A", "GCU":"A", "GCA":"A", "GCG":"A", 
@@ -50,10 +50,10 @@ codontable = {"CUU":"L", "CUC":"L", "CUA":"L", "CUG":"L", "UUA":"L", "UUG":"L",
             "UAA":"Stop", "UAG":"Stop", "UGA":"Stop"}
 
 last_count = 1
-for i in range(len(Protein)):
+for protein in Protein_string:
     count = 0
     for value in codontable.values():
-        if value == Protein[i]:
+        if value == protein:
             count += 1
     #print(count, "of a base")
     last_count *= count
