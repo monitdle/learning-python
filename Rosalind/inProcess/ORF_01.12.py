@@ -34,8 +34,10 @@ codontable = {"CUU":"L", "CUC":"L", "CUA":"L", "CUG":"L", "UUA":"L", "UUG":"L",
 
 
 
-## Step 1: Filter out the DNA string, inspired by GC from 27.11.:
 string_lines = rawdata.split("\n")
+
+
+
 DNA_string = ""
     
 for line in string_lines:
@@ -44,67 +46,11 @@ for line in string_lines:
     else:
         DNA_string += line
 #print(DNA_string)
-  
-
-## Step 2: Using code for Transkription from RNA:
-RNA_string = ""     #preparing an empty string for our RNA string
-
-for nb in DNA_string:   #go through DNA string
-    if nb == "T":   #check if it's a T base
-        RNA_string += "U"   #if yes: put U base intro RNA string
-    else:   #everything else will be put into RNA string as it is
-        RNA_string += nb
-
-#print(RNA_string)
 
 
 
-## Step 3.1: Creating different triplets aka Reading frames
 
-RNA_triplets1 = []
-triplet = ""
-for i, nb in enumerate(RNA_string):
-    if i % 3 == 0:
-        RNA_triplets1.append(triplet)
-        triplet = nb
-    else:
-        triplet += nb
-RNA_triplets1.remove("")
-#print(RNA_triplets1)
-
-        
-
-RNA_triplets2 = []
-triplet = ""
-
-for i, nb in enumerate(RNA_string[1:]):
-    if i % 3 == 0:
-        RNA_triplets2.append(triplet)
-        triplet = nb
-    else:
-        triplet += nb
-RNA_triplets2.remove("")
-#print(RNA_triplets2)
-
-
-RNA_triplets3 = []
-triplet = ""
-
-for i, nb in enumerate(RNA_string[2:]):
-    if i % 3 == 0:
-        RNA_triplets3.append(triplet)
-        triplet = nb
-    else:
-        triplet += nb
-RNA_triplets3.remove("")
-#print(RNA_triplets3)
-
-
-
-## Step 3.2: Creating the reverse reading frames
-### Taking from REVC:
 DNArev_string = ""
-#print(DNA_string)
 
 for k in DNA_string[::-1]:
     if k == "A":
@@ -121,18 +67,60 @@ for k in DNA_string[::-1]:
 #print(DNArev_string)  #...got rid of the googled function
 
 
-RNA_reverse = ""     #preparing an empty string for our RNA string
 
-for nb in DNArev_string:   #go through DNA string
-    if nb == "T":   #check if it's a T base
-        RNA_reverse += "U"   #if yes: put U base intro RNA string
-    else:   #everything else will be put into RNA string as it is
-        RNA_reverse += nb
+frame1 = DNA_string.replace("T", "U")
+frame2 = frame1[1:]
+frame3 = frame1[2:]
+frame4 = DNArev_string.replace("T", "U")
+frame5 = frame4[1:]
+frame6 = frame4[2:]
+
+
+
+RNA_triplets1 = []
+triplet = ""
+for i, nb in enumerate(frame1):
+    if i % 3 == 0:
+        RNA_triplets1.append(triplet)
+        triplet = nb
+    else:
+        triplet += nb
+RNA_triplets1.remove("")
+#print(RNA_triplets1)
+
         
+
+RNA_triplets2 = []
+triplet = ""
+
+for i, nb in enumerate(frame2):
+    if i % 3 == 0:
+        RNA_triplets2.append(triplet)
+        triplet = nb
+    else:
+        triplet += nb
+RNA_triplets2.remove("")
+#print(RNA_triplets2)
+
+
+RNA_triplets3 = []
+triplet = ""
+
+for i, nb in enumerate(frame3):
+    if i % 3 == 0:
+        RNA_triplets3.append(triplet)
+        triplet = nb
+    else:
+        triplet += nb
+RNA_triplets3.remove("")
+#print(RNA_triplets3)
+
+
+
 
 RNA_triplets1_rev = []
 triplet = ""
-for i, nb in enumerate(RNA_reverse):
+for i, nb in enumerate(frame4):
     if i % 3 == 0:
         RNA_triplets1_rev.append(triplet)
         triplet = nb
@@ -144,7 +132,7 @@ RNA_triplets1_rev.remove("")
 
 RNA_triplets2_rev = []
 triplet = ""
-for i, nb in enumerate(RNA_reverse[1:]):
+for i, nb in enumerate(frame5):
     if i % 3 == 0:
         RNA_triplets2_rev.append(triplet)
         triplet = nb
@@ -156,7 +144,7 @@ RNA_triplets2_rev.remove("")
 
 RNA_triplets3_rev = []
 triplet = ""
-for i, nb in enumerate(RNA_reverse[2:]):
+for i, nb in enumerate(frame6):
     if i % 3 == 0:
         RNA_triplets3_rev.append(triplet)
         triplet = nb
@@ -166,10 +154,17 @@ RNA_triplets3_rev.remove("")
 #print(RNA_triplets3_rev)
 
 
-## Step 3.3: Uniting all RNA triplets
+
 
 RNA_all_triplets = [RNA_triplets1] + [RNA_triplets2] + [RNA_triplets3] + [RNA_triplets1_rev] + [RNA_triplets2_rev] + [RNA_triplets3_rev]
 
+
+
+### Finding AUGs
+for string in RNA_all_triplets:
+    for i, start in enumerate(string):
+        if start == "AUG":
+            print(i)
 
 
 ## Step 4: Translation function
@@ -178,7 +173,7 @@ def translation(target):
     start_translation = False
     proteinstring = ""
 
-    for triplet in target:
+    for i, triplet in enumerate(target):
         if triplet == "AUG":
             start_translation = True
             
@@ -196,8 +191,6 @@ for string in RNA_all_triplets:
     print(translation(string))
 
 
-###############################################################################
-###############################################################################
 
-
+##### Idea: look at indices of Start- & Stoppcodons: pick smallest Stopp which is still larger than Start
 
