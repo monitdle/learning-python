@@ -30,6 +30,6 @@ for line, game in enumerate(games):
 print(sum_of_games)
 
 
-# missunderstood: semicolons means put back
+# misunderstood: semicolon means put back
     
     
