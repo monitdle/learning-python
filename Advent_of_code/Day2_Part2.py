@@ -1,20 +1,19 @@
 file = open("/Users/MoniLe/Desktop/Programming/learning-python/Advent_of_code/Day2_input.txt")
 games = (file.read()).splitlines()
 
-sum_of_games = 0
-loop = 0
+
 for line, game in enumerate(games):
     game_parts = game.split(":")[1].strip()
     cube_games = {}
     #mycubes = {"red" : 12, "green" : 13, "blue" : 14}
     
     tries = ""
-    tries = game_parts.replace(",", "").split(";")     #### look here
+    tries = game_parts.replace(",", "").split(";")
     #print(tries)
     
     for k, grab in enumerate(tries):
         grab = grab.split(" ")
-        mycubes = {"red" : 12, "green" : 13, "blue" : 14}
+        mycubes = {"red" : 12, "green" : 13, "blue" : 14}   ###### look here
 
         for i, word in enumerate(grab):
             #print(word)
@@ -23,7 +22,7 @@ for line, game in enumerate(games):
                 grabbed_cubes = int(grab[i - 1])
 
                 if word == "red":
-                    mycubes[word] -= grabbed_cubes
+                    mycubes[word] -= grabbed_cubes    #######if value > existing value, add difference
                 elif word == "blue":
                     mycubes[word] -= grabbed_cubes
                 elif word == "green":
@@ -31,23 +30,16 @@ for line, game in enumerate(games):
         cube_games[f"Game {line + 1}, Grab {k + 1}"] = mycubes
         #print(cube_games)
         
-    valid = 0
+    min_number_of_cubes = {"red" : 0, "green" : 0, "blue" : 0}
     for game_grab, grab_dict in cube_games.items():  
-        #print(grab_dict)
-        if any(value < 0 for value in grab_dict.values()): 
-            #print(line, "False")
-            #adding = False
-            valid += 1
-        else:
-            #print(line, "True")
-            valid += 0
-               
-    if valid == 0:
-        add = line + 1
-        #print(add)
-        sum_of_games += add
-            
-print(sum_of_games)
+        print(grab_dict)
+        for key, value in grab_dict.items():
+            min_number_of_cubes[key] = value
+
+            ## min_number_of_cubes[key] += value
+        
+        ## power *= key
+
     
     
     

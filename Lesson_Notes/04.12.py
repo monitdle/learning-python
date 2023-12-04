@@ -29,6 +29,7 @@ round_3 = {"blue" : 0, "green" : 2,"red" : 0}
 maximum_cubes = {"blue" : 12, "green" : 13,"red" : 14}
 
 
+
 is_valid = []
 for round in game1:
     curr_round = game_round(round["blue"], round["green"], round["red"], maximum_cubes["blue"], maximum_cubes["green"], maximum_cubes["red"])
