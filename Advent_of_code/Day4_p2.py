@@ -63,9 +63,7 @@ for win, owned in win_own.items():
     
     if matches >= 0:
         points = 2 ** matches
-        print(" =>  2 **", matches, "  =", points, "points \n")
+        print(" =>  2 **", matches, "  =", points, "points")
         sum_of_points += points
-    else:
-        print(" =>  0 points \n")
 
-print(" ===>  Sum of points:", sum_of_points)        
+print(sum_of_points)        
