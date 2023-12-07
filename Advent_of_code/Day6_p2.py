@@ -1,4 +1,3 @@
-## For train of thoughts: learning-python/Lesson_Notes/06.12._Day6.py
 
 file = open("C:\\Users\\monik\\OneDrive\\Desktop\\Programming\\learning-python\\Advent_of_code\\Day6_input.txt", "r")
 time_record = (file.read()).splitlines()
