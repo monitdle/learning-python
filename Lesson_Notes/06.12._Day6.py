@@ -64,19 +64,20 @@ for way, dist in enumerate(dist_traveled):
 winning_buttons = []
 
 def breaking_record(time_of_race, record_dist):
+    winning_buttons = []
     
     for button in range(time_of_race):
         speed = button
         travel_time = time_of_race - button
         distance = travel_time * speed
         
-        if distance > record:
+        if distance > record_dist:
             #print("Pressing the button for", button, "sec beats the record of", record, "mm with", distance, "mm")
             winning_buttons.append(button)
 
     return winning_buttons
 
-#breaking_record(7, 9)
+breaking_record(7, 9)
 
 
 
@@ -112,10 +113,16 @@ for time, record in times_records.items():
     race_winningbuttons[racenumber] = breaking_record(time, record)
 
 print(race_winningbuttons)
-    
+  
+  
+## Calculating product of numbers of ways to win each race
+product = 1
+for ways_to_win in race_winningbuttons.values():
+    product *= len(ways_to_win)
 
-breaking_record(7, record_dist)
-    
+print(product)
+
+
 
         
 
