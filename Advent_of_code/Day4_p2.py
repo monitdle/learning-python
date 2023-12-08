@@ -42,28 +42,50 @@ for win, owned in win_own.items():
 #print(win_own)
 
 
-## Wanted Output: For the first time it's true -> 1 point; then -> doubled
-    #Meaning: 1; 1*2; 1*2*2; 1*2*2*2.....
-    #OR: 2^0, 2^1, 2^3, 2^4.....
-    #in Python: 2 ** 0, 2 ** 1, .....
+## Making lists
+owning = []
+winning = []
 
-cardID = 0  #created that just for the printing ***** below, to look pretty
-sum_of_points = 0
+for key, value in win_own.items():
+    winning.append(key)
+    owning.append(value)
 
-for win, owned in win_own.items():
-    #print("\nNumbers I need:", win, "\nNumbers I have:", owned)
-    matches = -1
-    cardID += 1
+    
+## Counting matches and making a list
+number_of_matches = []
+
+for i, win in enumerate(winning):
+    cardID = i + 1
+    list_of_matches = []
+    match_list = []
     
     for number in win.split(" "):
-        if number in owned and number.isdigit():
-            #print(number)
-            matches += 1
-    print(matches +  1, f"match*es in Card {cardID}")   #*****
-    
-    if matches >= 0:
-        points = 2 ** matches
-        print(" =>  2 **", matches, "  =", points, "points")
-        sum_of_points += points
+        
+        if number in owning[i]:
+            list_of_matches.append(number)
+        
+    count = len(list_of_matches)
+    #print(count, f"matches on Card {i + 1}")
+    number_of_matches.append(count)
 
-print(sum_of_points)        
+#print(number_of_matches)
+
+
+## Making list with number of cards
+cards = [1] * len(winning)
+
+
+## Counting number of a card i
+#steps = card i + number_of_matches[i]
+#adding (cards[i] * 1) number of copies
+
+for i, matches in enumerate(number_of_matches):
+    for next_card in range(1, matches + 1):
+        cards[i + next_card] += (1 * cards[i])
+
+print(sum(cards))
+
+
+
+
+       
