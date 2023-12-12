@@ -1,5 +1,5 @@
-#file = open("C:\\Users\\monik\\OneDrive\\Desktop\\Programming\\learning-python\\Advent_of_code\\Day9_input.txt", "r")
-file = open("/Users/MoniLe/Desktop/Programming/learning-python/Advent_of_code/Day9_input.txt", "r")
+file = open("C:\\Users\\monik\\OneDrive\\Desktop\\Programming\\learning-python\\Advent_of_code\\Day9_input.txt", "r")
+#file = open("/Users/MoniLe/Desktop/Programming/learning-python/Advent_of_code/Day9_input.txt", "r")
 sequences_file = file.read()
 sequences_file = sequences_file.splitlines()
 
