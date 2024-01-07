@@ -53,19 +53,22 @@ for sequence in seq_hist.keys():
         seq = hist      #using name "seq" as the last history until a new seq starts
     
 
-############### Extrapolating to find next number in sequence ################
-sum_ep = 0
+############ Extrapolating to find the number BEFORE the sequence #############
+sum_back_ep = 0
 
 for sequence, history in seq_hist.items():
-    ep_diff = 0                             #extrapolated differences
-    for value in history.values():
-        for i, last_number in enumerate(value[-1:]):
-            ep_diff += last_number          #sum up all last differences of each history
-    
-    for last_num_seq in sequence.split(" ")[-1:]:
-        lns = int(last_num_seq)
+    new_ep_diff = 0      #new extrapolated difference
+    last_ep_diff = 0     #last extrapolated difference
+    for value in reversed(history.values()):
+        new_ep_diff = value[0] - last_ep_diff    #new extrapolated difference = first value of history - last extrapolated difference
+        last_ep_diff = new_ep_diff
         
-    ep = lns + ep_diff      #extrapolation = last number of sequence + sum(last numbers of all differences)
-    sum_ep += ep
+    fns = int(sequence.split(" ")[0])       #first number of sequence
+        
+    back_ep = fns - new_ep_diff      #extrapolation = first number of sequence - newest extrapolated difference of history
+    sum_back_ep += back_ep
 
-print(sum_ep)
+print(sum_back_ep)
+
+
+
