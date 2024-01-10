@@ -1,4 +1,4 @@
-file = open("/Users/lemon/Desktop/Programming/learning-python/Rosalind/inProcess/PRTM_input.txt", "r")
+file = open("/Users/lemon/Desktop/Programming/learning-python/Rosalind/PRTM_input.txt", "r")
 proteinstring = file.read()
 
 
