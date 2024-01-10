@@ -21,7 +21,6 @@ DataRaw = file.read()
 ### ii. + iii. -> Thought: find intron AND remove it, move on to next
 
 DataString = DataRaw.split("\n")    #split in lines
-DataString = DataRaw.replace(">", "").split("\n")
 
 
 sequences = []
@@ -45,6 +44,10 @@ def find_intron(gene, intron):
 
 
 ## Finding and removing each intron after each other
+DNAstring = max(sequences, key = len)
+introns = sequences
+introns.remove(DNAstring)
+
 for seq in introns:
     ind = find_intron(DNAstring, seq)
     if isinstance(ind, list):
@@ -54,13 +57,7 @@ final_DNAstring = DNAstring
 
 
 ### iv. DNA -> RNA    => "RNA.py"
-RNAstring = ""
-
-for nb in final_DNAstring:   #go through DNA string
-    if nb == "T":   #check if it's a T base
-        RNAstring += "U"   #if yes: put U base intro RNA string
-    else:   #everything else will be put into RNA string as it is
-        RNAstring += nb
+RNAstring = final_DNAstring.replace("T", "U")
 
 
 ## RNA -> Protein    => "PROT.py"

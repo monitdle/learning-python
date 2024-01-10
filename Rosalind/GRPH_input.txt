@@ -1,0 +1,12 @@
+>Rosalind_0498
+AAATA
+AA
+>Rosalind_2391
+AAA
+TTTT
+>Rosalind_2323
+TTTTCCC
+>Rosalind_0442
+AAATCCC
+>Rosalind_5013
+GGGTGGG

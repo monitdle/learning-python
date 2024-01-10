@@ -34,4 +34,19 @@ for db in Databases:
 # {} any except
 # [] or
 
+def finding_Ng(sequence):
+    positions = []
+    
+    for i, abc in enumerate(sequence):
+        
+        if abc == "N" and sequence[i + 1] != "P" and sequence[i + 2] == ("S" or "T") and sequence[i + 3] != "P":
+            pos = i + 1
+            positions.append(pos)
+        
+    return positions
+            
+
+for seq in sequences:
+     print(finding_Ng(seq))
+        
 
