@@ -28,7 +28,7 @@ for ID in DataString:
 #print(IDlist)
 
 
-### Step 3: Create dictionary(?) with DNA strings as keys and ID as values
+### Step 3: Create dictionary with DNA strings as keys and ID as values
 DNA_ID = dict(zip(DNAstrings, IDlist))
 
 
