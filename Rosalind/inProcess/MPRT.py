@@ -1,22 +1,37 @@
+file = open("/Users/lemon/Desktop/Programming/learning-python/Rosalind/SPLC_input.txt", "r")
+DataRaw = file.read()
+Datanames = DataRaw.splitlines()    #split in lines
+
+# Removing e.g. _TRBM_HUMAN from P07204_TRBM_HUMAN
+Databases = Datanames
+for j, db in enumerate(Databases):
+    for i, letter in enumerate(db):
+        if letter == "_":
+            Databases[j] = db[:i]
+            break
+
+
+### Opening all urls and extracting just the sequences by...
 import requests
 
-url = "https://rest.uniprot.org/uniprotkb/A2Z669.fasta"
+sequences = []
+for db in Databases:
+    fasta_url = f"https://rest.uniprot.org/uniprotkb/{db}.fasta"
 
-response = requests.get(url)
+    response = requests.get(fasta_url)
+    content = response.text
 
-if response.status_code == 200:
-    with open("A2Z669.fasta", "wb") as file:
-        file.write(response.content)
-    print("File downloaded successfully.")
-else:
-    print(f"Failed to download file. Status code: {response.status_code}")
+    # ...removing the first line...
+    contlines = content.splitlines()
+    del contlines[0]
+
+    # ...and joining the rest for the sequence
+    seq = "".join(contlines)
+    sequences.append(seq)
 
 
-# Open the downloaded FASTA file
-file_path = "A2Z669.fasta"
-with open(file_path, "r") as file:
-    # Read the file line by line
-    for line in file:
-        # Check if the line contains the target string "AQP"
-        if "AQP" in line:
-            print("Found 'AQP' in line:", line.strip())
+### Searching for N-glycosylation  N{P}[ST]{P}
+# {} any except
+# [] or
+
+
