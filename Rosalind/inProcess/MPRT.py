@@ -1,4 +1,4 @@
-file = open("/Users/lemon/Desktop/Programming/learning-python/Rosalind/SPLC_input.txt", "r")
+file = open("/Users/lemon/Desktop/Programming/learning-python/Rosalind/inProcess/MPRT_input.txt", "r")
 DataRaw = file.read()
 Datanames = DataRaw.splitlines()    #split in lines
 
@@ -30,23 +30,58 @@ for db in Databases:
     sequences.append(seq)
 
 
-### Searching for N-glycosylation  N{P}[ST]{P}
+### Function for searching N-glycosylation  N{P}[ST]{P}
 # {} any except
 # [] or
 
-def finding_Ng(sequence):
+def finding_NG(sequence):
     positions = []
     
-    for i, abc in enumerate(sequence):
+    for i in range(len(sequence) - 3):
         
-        if abc == "N" and sequence[i + 1] != "P" and sequence[i + 2] == ("S" or "T") and sequence[i + 3] != "P":
+        if sequence[i] == "N" and sequence[i+1] != "P" and (sequence[i+2] == "S" or sequence[i+2] == "T") and sequence[i+3] != "P":
             pos = i + 1
             positions.append(pos)
-        
+    
     return positions
-            
-
-for seq in sequences:
-     print(finding_Ng(seq))
         
+#print(finding_NG(sequences[2]))
+
+
+######### TWO IDEAS #########
+### 1. Creating dictionary for more structured and visually appealing printing
+NGdict = {}
+Datanames = DataRaw.splitlines()    #bc Datanames got overwritten somehow
+
+for name in Datanames:
+    NGdict[name] = []
+    
+
+## Combining the keys with their list of values
+for seq, key in zip(sequences, NGdict):
+    NGdict[key] = finding_NG(seq)
+    
+## Printing wanted Output
+for key, value in NGdict.items():
+    if value != []:
+        print(key)
+        for pos in value:
+            print(pos, end = " ")
+        print("")
+
+
+
+### 2. Just print all in one loop
+Datanames = DataRaw.splitlines()    #bc Datanames got overwritten somehow
+
+for names, seq in zip(Datanames, sequences):
+    pos_list = finding_NG(seq)
+    
+    if pos_list != []:
+        print(names)
+        for pos in pos_list:
+            print(pos, end = " ")
+        print("")            
+
+
 
