@@ -1,6 +1,9 @@
 # Dead Wabbits
 
 ## for thought process: https://github.com/monitdle/learning-python/blob/main/Lesson_Notes/FIBD_Notes.py
+# Note: First I tried it with a list, but it got too extensive to process for n & m of 100 & 20
+# Here I am using a dict bc since m is max. 20, the dict will have max. 21 keys and values
+
 
 file = open("/Users/lemon/Desktop/Programming/learning-python/Rosalind/FIBD_input.txt", "r")
 DataRaw = file.read()
@@ -9,20 +12,14 @@ n = int(n_m[0])
 m = int(n_m[1])
 
 
-## Dictionary loop
-    #what we are now making is the population of F2 for our first calculation F3:
-
-
-# in our dict we already covered Ind of age 1 (= new off) and age 2 (= new adults):
-
-# since m <= 20, the dict will have max. 21 keys
-
 
 def dead_wabbits(generations, age_of_death):
     
-    # making dict with values of F2:
+    ## Dictionary loop
+    #what we are now making is the population of F2 for our first calculation F3:
     population = {"new_offspring" : 0, "new_adults" : 1}
-    for a in range(3, age_of_death + 2):
+    
+    for a in range(3, age_of_death + 2):     # Ind of age 1 (= new off) and age 2 (= new adults) are already in dict
     
         if a == (m + 1): 
             population["too_old"] = 0
@@ -31,7 +28,7 @@ def dead_wabbits(generations, age_of_death):
             population[f"age_{a}"] = 0  
     
     
-    # aging the wabbits by 1 month:
+    ## Aging the wabbits by 1 month:
     for Gen in range(generations - 2):  #we don't need to calculate F1 & F2
         
         prevkey = None
@@ -50,12 +47,12 @@ def dead_wabbits(generations, age_of_death):
             prevkey = key   #saves which key was before since dicts are not ordered by rank
 
 
-        ## calculate number of offsprings == number of all adults in last gen:
+        ## Calculate number of offsprings == number of all adults in last gen:
         for gen in range(1):
             population["new_offspring"] = sum(value for key, value in population.items() if key not in ["new_offspring", "new_adults"])
             # leaving out new adults since they just became adults and offsprings
 
-    ## calculating population size by summing up all values except too_old
+    ## Calculating population size by summing up all values except too_old
     population_size = sum(value for key, value in population.items() if key != "too_old")
     
     
