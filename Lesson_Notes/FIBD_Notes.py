@@ -78,6 +78,12 @@ def dead_wabbits(generations, months_to_live):
 ############################################################################################################
 ############################################################################################################
 
+
+
+############################################################################################################
+################################### Making Dictionary: Works! ##############################################
+############################################################################################################
+
 ## Number of wabbits in a Generation is:
     # [1] new adult pairs (= number of offspring pairs in last Gen)
     # [2] new offspring pairs (= number of adult pairs in last Gen)
@@ -86,7 +92,6 @@ def dead_wabbits(generations, months_to_live):
     
     # F1: 1 offspring pair
     # order of calculation: [2] & [3], [1], [4]
-
 
 
 file = open("/Users/lemon/Desktop/Programming/learning-python/Rosalind/FIBD_input.txt", "r")
