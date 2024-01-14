@@ -15,6 +15,7 @@ m = int(n_m[1])
 
 def dead_wabbits(generations, age_of_death):
     
+    
     ## Dictionary loop
     #what we are now making is the population of F2 for our first calculation F3:
     population = {"new_offspring" : 0, "new_adults" : 1}
@@ -22,18 +23,19 @@ def dead_wabbits(generations, age_of_death):
     for a in range(3, age_of_death + 2):     # Ind of age 1 (= new off) and age 2 (= new adults) are already in dict
     
         if a == (m + 1): 
-            population["too_old"] = 0
+            population["too_old"] = 0   # creating category for dead wabbits
     
         else:
-            population[f"age_{a}"] = 0  
+            population[f"age_{a}"] = 0      # create age categories for adults from 3 to age_of_death
     
     
-    ## Aging the wabbits by 1 month:
+    ## Population loop
     for Gen in range(generations - 2):  #we don't need to calculate F1 & F2
         
         prevkey = None
         prevvalue = 0
 
+        ## Aging the wabbits by 1 month:
         for key, value in population.items():
             
             if prevkey is not None and prevkey != "new_offspring":
