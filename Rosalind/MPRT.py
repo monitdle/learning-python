@@ -1,4 +1,4 @@
-file = open("/Users/lemon/Desktop/Programming/learning-python/Rosalind/inProcess/MPRT_input.txt", "r")
+file = open("/Users/lemon/Desktop/Programming/learning-python/Rosalind/MPRT_input.txt", "r")
 DataRaw = file.read()
 Datanames = DataRaw.splitlines()    #split in lines
 
@@ -48,18 +48,17 @@ def finding_NG(sequence):
 #print(finding_NG(sequences[2]))
 
 
+
+#############################
 ######### TWO IDEAS #########
+
 ### 1. Creating dictionary for more structured and visually appealing printing
 NGdict = {}
 Datanames = DataRaw.splitlines()    #bc Datanames got overwritten somehow
 
-for name in Datanames:
-    NGdict[name] = []
-    
-
-## Combining the keys with their list of values
-for seq, key in zip(sequences, NGdict):
-    NGdict[key] = finding_NG(seq)
+## Saving names in Datanames as keys and sequences as values
+for name, seq in zip(Datanames, sequences):
+    NGdict[name] = finding_NG(seq)
     
 ## Printing wanted Output
 for key, value in NGdict.items():
@@ -69,6 +68,7 @@ for key, value in NGdict.items():
             print(pos, end = " ")
         print("")
 
+print("____________________________________________________\n")
 
 
 ### 2. Just print all in one loop

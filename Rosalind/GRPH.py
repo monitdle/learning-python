@@ -49,6 +49,7 @@ file = open("/Users/lemon/Desktop/Programming/learning-python/Rosalind/GRPH_inpu
 DataRaw = file.read()
 DataString = DataRaw.split("\n")    #split in lines
 
+
 # Separating IDs and DNA:
 ID_DNA = {}
 
@@ -56,10 +57,11 @@ for line in DataString:
     
     if ">" in line:
         ID = line.replace(">", "")
-        ID_DNA[ID] = ""
+        ID_DNA[ID] = ""     #creates new key everytime an ID line is present
     
     elif ">" not in line:
-        ID_DNA[ID] += line  #will take last newly created ID, since it always comes first
+        ID_DNA[ID] += line
+        #will take last newly created ID & appends lines after that to its value until a new ID comes up
 
 
 # comparing last 3 nucleobases of one string with first 3 nb of another string
