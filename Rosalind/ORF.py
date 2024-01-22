@@ -1,7 +1,8 @@
 # Open Reading Frames
 file = open("/Users/lemon/Desktop/Programming/learning-python/Rosalind/ORF_input.txt", "r")
 DataRaw = file.read()
-string_lines = DataRaw.split("\n")
+string_lines = DataRaw.split("\n")[1:]
+
 
 
 ## Difference Reading frame as in Leseraster vs. Reading frame translation Leserahmen:
@@ -40,80 +41,73 @@ codontable = {"CUU":"L", "CUC":"L", "CUA":"L", "CUG":"L", "UUA":"L", "UUG":"L",
     # 3) Translate them into amino acids
 
 
-## 1) DNA string and complementary DNA string
-DNA = string_lines[1]
+## 1) DNA string and complementary DNA string & putting all frames into dict
+DNA = "".join(string_lines)
 
 ctable = str.maketrans("ATGC", "TACG")  #creates translation table A to T etc.
-cDNA = DNA.translate(ctable)
+cDNA = DNA.translate(ctable)[::-1]  #complementary DNA has to be read in reverse
 
 RNA = DNA.replace("T", "U")
 cRNA = cDNA.replace("T", "U")
 
 
+# For different reading frames, here translation starts at index 1
+RNA1 = RNA[1:]      
+cRNA1 = cRNA[1:]
 
-## 2) Reading strands in different ways
+# Translation starts at index 2
+RNA2 = RNA[2:]      
+cRNA2 = cRNA[2:]
 
-all_triplets = {"RNA":[], "RNA1":[], "RNA2":[], "cRNA":[], "cRNA1":[], "cRNA2":[]}
+# list with all frames:
+frames = [RNA, RNA1, RNA2, cRNA, cRNA1, cRNA2]   
 
-def triplets(strand):
+
+## 2) Translate them into amino acids    
+proteins = []    
     
+for seq in frames:
+    translation_active = False  #ensures that translation only starts after an AUG is found
+    protein = ""        #resets protein for each frame
+    rest = len(seq) % 3     #to ensure that all triplets are len(triplet) = 3, no error message
     
-    for i, nb in enumerate(strand):
+    for i in range(0, len(seq) - rest, 3):  #basically range(len(seq)) but in steps of 3
+        triplet = seq[i : i + 3]
+        aa = codontable[triplet]    #translation into amino acids
+ #       print(triplet, aa, name)
         
-        if i % 3 == 0 and i != 0:
-            triplet = strand[i - 3 : i]
-            all_triplets[strand].append(triplet)
-
-
-    for i, nb in enumerate(strand[1:]):
+        if aa == "M":       #alternative: if triplet == "AUG"
+            protein += aa
+            translation_active = True   #sign to start translation = activates elif-statements
         
-        if i % 3 == 0 and i != 0:
-            triplet = strand[i - 3 : i]
-            all_triplets[f"{strand}1"].append(triplet)
-
-    
-    for i, nb in enumerate(strand[2:]):
-    
-        if i % 3 == 0 and i != 0:
-            triplet = strand[i - 3 : i]
-            all_triplets[f"{strand}2"].append(triplet)
-    
-    
-    return all_triplets
-
-print(triplets(RNA))
-
-
-
-## 3) Translate them into amino acids    
-all_proteins = {"RNA":"", "RNA1":"", "RNA2":"", "cRNA":"", "cRNA1":"", "cRNA2":""}
-
-for i, nb in enumerate(RNA[1:]):
-    RNA = RNA[1:]
-    
-    if i % 3 == 0 and i != 0:
-        triplet = RNA[i - 3 : i]
-
-        if triplet == "AUG":
-            all_proteins["RNA"] += "M"
-
-    if all_proteins["RNA"] != "" and codontable[triplet] not in ["Stop", "M"]:
-        all_proteins["RNA"] += codontable[triplet]
+        elif aa == "Stop" and translation_active == True:
+            proteins.append(protein)    #save protein then break off inner for-loop
+            break
         
-    elif codontable[triplet] == "Stop":
-        break
+        elif translation_active == True:  #main translation here
+            protein += aa
 
-protein = ""
-    
-for nb in range(3, len(RNA)):
-    triplet = strand[nb - 3 : nb]
-    aa = codontable[triplet]
-    
-    if aa == "Stop":
-        break
+
+    # Problem: When a protein includes another AUG, it has to be translated again starting at that AUG
+        # so here I'm just slicing it, starting at all the M positions in the long protein
+    if protein.count("M") > 1:
+        #creating list & searching for very position with M, except first M since its the long protein we already have
+        positions = [i for i, nb in enumerate(protein) if nb == "M" and i != 0]
         
-    else:
-        protein += aa
-        
-    
-    
+        for pos in positions:
+            proteins.append(protein[pos:])  #slicing using our position list
+
+
+for string in set(proteins):    #set() doesn't give out doubles, distinctions
+    print(string)
+
+
+
+
+
+
+
+
+
+
+
