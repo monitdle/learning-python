@@ -33,10 +33,10 @@ for i, nb in enumerate(DNA):
         frame = DNA[i : i + end]    #loop in loop: fixates first position, runs end position from 4 to 12
         cframe = frame.translate(ctable)[::-1]  #complement of reversed frame
         if len(frame) >= 4 and frame == cframe:     #if length more than 4, since at the end length can be shorter
-            list_of_RPs[i + 1] = len(frame)
+            list_of_RPs[i + 1] = len(frame)     #position as keys, length as values
 
-for length, position in list_of_RPs.items():
-    print(length, position)
+for position, length in list_of_RPs.items():    #print dict
+    print(position, length)
 
 
 
